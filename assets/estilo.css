@@ -1,0 +1,360 @@
+/* Taller ELIXIR-México 2026 — hoja de estilo.
+   Paleta y tipografía según la Guía de marca de ELIXIR 2025:
+   azul real #023452 (títulos), gris #4d4848 (texto), naranja #f47d20 (llamadas a la acción),
+   verde oliva #bebf32 (acento, con moderación). Tipografía web: Lato.
+   Sin recursos externos: la fuente se sirve desde assets/fuentes/. */
+
+/* Poppins: misma tipografía que los banners, solo para títulos de la portada */
+@font-face {
+  font-family: "Poppins";
+  src: url("fuentes/poppins-latin-600-normal.woff2") format("woff2");
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("fuentes/poppins-latin-700-normal.woff2") format("woff2");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Lato";
+  src: url("fuentes/lato-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lato";
+  src: url("fuentes/lato-latin-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --azul: #023452;
+  --gris: #4d4848;
+  --naranja: #f47d20;
+  --oliva: #bebf32;
+  --fondo: #ffffff;
+  --fondo-suave: #f3f5f7;
+  --borde: #d9dee3;
+  --texto: #4d4848;
+  --titulo: #023452;
+  --enlace: #023452;
+  --ancho: 60rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fondo: #0b1d2a;
+    --fondo-suave: #10283a;
+    --borde: #23405a;
+    --texto: #e8eef2;
+    --titulo: #ffffff;
+    --enlace: #f7a15c;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  font-family: "Lato", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--texto);
+  background: var(--fondo);
+}
+
+a { color: var(--enlace); text-underline-offset: 0.15em; }
+a:focus-visible, summary:focus-visible, .boton:focus-visible {
+  outline: 3px solid var(--naranja);
+  outline-offset: 3px;
+}
+
+.saltar {
+  position: absolute; left: -999px; top: 0;
+  background: var(--naranja); color: var(--azul); padding: 0.5rem 1rem; font-weight: 700;
+}
+.saltar:focus { left: 1rem; top: 1rem; z-index: 10; }
+
+.contenedor { max-width: var(--ancho); margin: 0 auto; padding: 0 1rem; }
+
+/* Encabezado */
+.portada {
+  background: var(--azul);
+  color: #ffffff;
+  padding: 3.5rem 0 3rem;
+  border-bottom: 6px solid var(--naranja);
+}
+.portada .antetitulo {
+  margin: 0 0 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--naranja);
+}
+.portada h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.15;
+  color: #ffffff;
+}
+.portada .resumen { max-width: 44rem; margin: 0 0 1.75rem; font-size: 1.15rem; }
+.datos {
+  display: flex; flex-wrap: wrap; gap: 0.5rem 2rem;
+  margin: 0 0 2rem; padding: 0; list-style: none;
+}
+.datos strong { display: block; color: var(--oliva); font-size: 0.85rem; letter-spacing: 0.04em; }
+
+.boton {
+  display: inline-block;
+  background: var(--naranja);
+  color: var(--azul);
+  font-weight: 700;
+  padding: 0.8rem 1.6rem;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.boton:hover { background: #f79443; }
+.nota-boton { margin: 0.75rem 0 0; font-size: 0.95rem; }
+
+/* Navegación */
+nav.indice { background: var(--fondo-suave); border-bottom: 1px solid var(--borde); }
+nav.indice ul {
+  display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem;
+  margin: 0; padding: 0.75rem 0; list-style: none;
+}
+nav.indice a { font-weight: 700; text-decoration: none; }
+nav.indice a:hover { text-decoration: underline; }
+
+/* Secciones */
+main section.contenedor { padding: 2.75rem 1rem 1rem; }
+h2 {
+  margin: 0 0 1rem;
+  font-size: 1.75rem;
+  line-height: 1.25;
+  color: var(--titulo);
+}
+h2 .fechas { display: block; font-size: 1.05rem; color: var(--texto); font-weight: 400; margin-top: 0.25rem; }
+h3 { margin: 1.5rem 0 0.5rem; font-size: 1.2rem; color: var(--titulo); }
+p { max-width: 46rem; }
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.tarjeta {
+  background: var(--fondo-suave);
+  border: 1px solid var(--borde);
+  border-top: 4px solid var(--naranja);
+  border-radius: 4px;
+  padding: 1rem 1.25rem;
+}
+.tarjeta h3 { margin-top: 0; }
+.tarjeta p { margin: 0; }
+
+/* Programa por día: cada día es un desplegable cuyo encabezado es su banner.
+   Cerrado se ve el banner; al abrirlo aparecen la descripción y el horario. */
+details.dia { margin: 0 0 1.5rem; }
+details.dia > summary {
+  display: block;
+  list-style: none;
+  cursor: pointer;
+}
+details.dia > summary::-webkit-details-marker { display: none; }
+details.dia > summary img.banner { margin: 0; border-radius: 4px 4px 0 0; }
+.dia-titulo {
+  /* En pantallas anchas el título se lee en el banner; aquí queda para lectores de pantalla */
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+.ver-mas {
+  display: block;
+  padding: 0.55rem 1rem;
+  background: var(--fondo-suave);
+  border: 1px solid var(--borde);
+  border-top: 0;
+  border-left: 4px solid #f2b134;
+  border-radius: 0 0 4px 4px;
+  font-weight: 700;
+  color: var(--titulo);
+}
+.ver-mas::before { content: "▸ "; }
+details.dia[open] .ver-mas::before { content: "▾ "; }
+details.dia > summary:hover .ver-mas { text-decoration: underline; }
+details.dia .cuerpo {
+  border: 1px solid var(--borde);
+  border-top: 0;
+  border-left: 4px solid #f2b134;
+  padding: 1rem 1rem 0.5rem;
+  margin-top: -4px;
+  border-radius: 0 0 4px 4px;
+}
+details.dia .cuerpo > p:first-child { margin-top: 0; }
+.subtitulo-horario { margin: 1rem 0 0.25rem; font-size: 1rem; color: var(--titulo); }
+
+/* En teléfono el texto del banner sería ilegible: se muestra el título como texto,
+   con la misma estética (degradado, pastilla amarilla, Poppins) */
+@media (max-width: 40rem) {
+  details.dia > summary img.banner { display: none; }
+  .dia-titulo {
+    position: static !important; width: auto; height: auto; margin: 0; clip: auto;
+    white-space: normal; overflow: visible;
+    display: block;
+    background: linear-gradient(100deg, #0b2b3d 0%, #0f4a5c 55%, #137878 100%);
+    border-radius: 4px 4px 0 0;
+    padding: 0.9rem 1rem 1rem;
+    font-family: "Poppins", "Lato", sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    line-height: 1.3;
+    color: #ffffff;
+  }
+  .dia-fecha {
+    display: inline-block;
+    background: #f2b134; color: #13253a;
+    font-weight: 600; font-size: 0.85rem;
+    padding: 0.2rem 0.5rem; border-radius: 4px;
+    margin-bottom: 0.45rem;
+  }
+  .dia-nombre { display: block; }
+}
+
+/* Texto solo para lectores de pantalla: el título de cada día está dentro del banner */
+.solo-lectores {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0);
+  white-space: nowrap; border: 0;
+}
+
+.tabla-envoltura { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 0.98rem; }
+th, td { text-align: left; vertical-align: top; padding: 0.5rem 0.75rem 0.5rem 0; border-bottom: 1px solid var(--borde); }
+th { color: var(--titulo); }
+td.hora { white-space: nowrap; font-variant-numeric: tabular-nums; width: 8.5rem; }
+tr.pausa td { color: var(--texto); opacity: 0.8; font-style: italic; }
+
+.aviso {
+  background: var(--fondo-suave);
+  border-left: 4px solid var(--oliva);
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  max-width: 46rem;
+}
+
+/* Pie */
+footer {
+  margin-top: 3rem;
+  padding: 2rem 0;
+  background: var(--fondo-suave);
+  border-top: 1px solid var(--borde);
+  font-size: 0.95rem;
+}
+footer p { margin: 0 0 0.5rem; }
+
+/* Banners: se ajustan al ancho disponible sin deformarse */
+img.banner {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 0 0 1rem;
+}
+
+/* Logotipo de ELIXIR: tamaño fijo y espacio libre alrededor, según la guía de marca */
+.logo-elixir { display: inline-block; margin: 0 0 1.5rem; padding: 0.5rem 0; }
+.logo-elixir img { display: block; width: 120px; height: auto; }
+.logo-pie { display: inline-block; margin: 0 0 1rem; padding: 0.5rem 0; }
+.logo-pie img { display: block; width: 110px; height: auto; }
+
+/* Portada con la misma estética que los banners: degradado, etiqueta menta,
+   pastilla amarilla, título en Poppins e ilustración de red a la derecha */
+.portada {
+  background: linear-gradient(100deg, #0b2b3d 0%, #0f4a5c 55%, #137878 100%);
+  border-bottom: 6px solid #f2b134;
+}
+.portada-rejilla {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 20rem;
+  gap: 2rem;
+  align-items: center;
+}
+.portada .antetitulo {
+  font-family: "Poppins", "Lato", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #bff3ea;
+  margin: 0 0 0.9rem;
+}
+.pastilla {
+  display: inline-block;
+  font-family: "Poppins", "Lato", sans-serif;
+  font-weight: 600;
+  background: #f2b134;
+  color: #13253a;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  margin: 0 0 1rem;
+}
+.portada h1 { font-family: "Poppins", "Lato", sans-serif; font-weight: 700; }
+.portada .datos strong { color: #bff3ea; }
+.portada .boton { background: #f2b134; color: #13253a; }
+.portada .boton:hover { background: #f6c55e; }
+.ilustracion { width: 100%; height: auto; }
+@media (max-width: 52rem) {
+  .portada-rejilla { grid-template-columns: 1fr; }
+  .ilustracion { display: none; }
+}
+
+/* Cabecera de cada semana: misma estética que la portada y los banners */
+.cabecera-semana {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 15rem;
+  gap: 1.5rem;
+  align-items: center;
+  background: linear-gradient(100deg, #0b2b3d 0%, #0f4a5c 55%, #137878 100%);
+  border-radius: 6px;
+  border-bottom: 5px solid #f2b134;
+  padding: 2rem 2.25rem;
+  margin: 0 0 1.5rem;
+}
+.cabecera-semana .antetitulo {
+  font-family: "Poppins", "Lato", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #bff3ea;
+  margin: 0 0 0.8rem;
+}
+.cabecera-semana .pastilla { margin-bottom: 0.9rem; }
+.cabecera-semana h2 {
+  font-family: "Poppins", "Lato", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3.2vw, 2.1rem);
+  line-height: 1.2;
+  color: #ffffff;
+  margin: 0;
+}
+.ilustracion-semana { width: 100%; height: auto; }
+@media (max-width: 52rem) {
+  .cabecera-semana { grid-template-columns: 1fr; padding: 1.5rem 1.25rem; }
+  .ilustracion-semana { display: none; }
+}
+
+/* Navegación fija al desplazarse, y margen para que los títulos no queden debajo de ella */
+nav.indice { position: sticky; top: 0; z-index: 5; }
+main section[id], details.dia[id] { scroll-margin-top: 4rem; }
+
+/* Tarjetas de «El taller» como enlaces a cada semana */
+a.tarjeta { display: block; text-decoration: none; color: inherit; }
+a.tarjeta:hover h3 { text-decoration: underline; }
+@media (max-width: 40rem) {
+  /* En teléfono la navegación fija ocupa una sola línea y se desliza de lado */
+  nav.indice ul { flex-wrap: nowrap; overflow-x: auto; white-space: nowrap; gap: 1.25rem; }
+}
