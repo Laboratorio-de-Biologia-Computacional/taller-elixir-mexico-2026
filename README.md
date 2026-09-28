@@ -29,7 +29,7 @@ Se publica con GitHub Pages desde la rama `main`, carpeta raíz.
 ## Dirección de la página
 
 Las etiquetas de vista previa (`og:url`, `og:image`) y la dirección canónica apuntan a
-`https://yalbibalderas.github.io/taller-elixir-mexico-2026/`. Si el repositorio se publica
+`https://laboratorio-de-biologia-computacional.github.io/taller-elixir-mexico-2026/`. Si el repositorio se publica
 con otro usuario, organización o dominio, se actualizan esas tres líneas en `index.html`.
 
 ## Cómo se actualiza
