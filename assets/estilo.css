@@ -285,22 +285,24 @@ img.banner {
 }
 
 /* Logotipo de ELIXIR: tamaño fijo y espacio libre alrededor, según la guía de marca */
-.logo-elixir { display: inline-block; margin: 0 0 1.5rem; padding: 0.5rem 0; }
-.logo-elixir img { display: block; width: 120px; height: auto; }
-/* Fila de logotipos del pie: misma altura visual, se acomodan en varias líneas en pantallas angostas */
-.logos-pie {
-  display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem 2rem;
-  list-style: none; margin: 0 0 1rem; padding: 0;
+/* Fila de logotipos de la portada: ELIXIR en su versión en negativo; el escudo de la UNAM (negro)
+   y el logotipo del CCG (azul) conservan sus colores institucionales sobre una placa blanca,
+   porque el fondo de la portada es oscuro */
+.logos-portada {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem;
+  list-style: none; margin: 0 0 1.5rem; padding: 0;
 }
-.logo-pie { display: inline-block; padding: 0.5rem 0; }
-.logo-pie img { display: block; width: auto; height: 83px; }
-/* El escudo de la UNAM (negro) y el logotipo del CCG (azul) conservan sus colores
-   institucionales; en modo oscuro se muestran sobre una placa clara para mantener el contraste */
-.logo-placa { border-radius: 8px; }
+.logos-portada a { display: block; }
+.logo-elixir img { display: block; width: auto; height: 74px; }
+.logo-placa { background: #ffffff; border-radius: 8px; padding: 0.4rem 0.6rem; }
+.logo-placa img { display: block; width: auto; height: 62px; }
 @media (max-width: 480px) {
-  .logos-pie { gap: 1rem 1.25rem; }
-  .logo-pie img { height: 60px; }
+  .logos-portada { gap: 0.75rem 1rem; }
+  .logo-elixir img { height: 56px; }
+  .logo-placa img { height: 46px; }
 }
+.logo-pie { display: inline-block; margin: 0 0 1rem; padding: 0.5rem 0; }
+.logo-pie img { display: block; width: 110px; height: auto; }
 
 /* Portada con la misma estética que los banners: degradado, etiqueta menta,
    pastilla amarilla, título en Poppins e ilustración de red a la derecha */
@@ -385,8 +387,4 @@ a.tarjeta:hover h3 { text-decoration: underline; }
 @media (max-width: 40rem) {
   /* En teléfono la navegación fija ocupa una sola línea y se desliza de lado */
   nav.indice ul { flex-wrap: nowrap; overflow-x: auto; white-space: nowrap; gap: 1.25rem; }
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo-placa { background: #ffffff; padding: 0.5rem 0.75rem; }
 }
