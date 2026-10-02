@@ -303,6 +303,27 @@ img.banner {
 }
 .portada h1 { font-family: "Poppins", "Lato", sans-serif; font-weight: 700; }
 .portada .datos strong { color: #bff3ea; }
+/* Inscripción en la portada: deja claro que se puede elegir una semana o las dos;
+   cada opción lleva el tono de su semana y enlaza a su programa */
+.inscripcion { margin: 0 0 1.75rem; }
+.inscripcion-texto { margin: 0 0 0.6rem; }
+.inscripcion-texto strong { display: block; color: #bff3ea; font-size: 0.85rem; letter-spacing: 0.04em; }
+.semanas-portada {
+  display: flex; flex-wrap: wrap; gap: 0.6rem;
+  list-style: none; margin: 0; padding: 0;
+}
+.semanas-portada a {
+  display: block;
+  padding: 0.5rem 0.9rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-left: 5px solid #4fc2b1;
+  border-radius: 6px;
+  color: #ffffff;
+  text-decoration: none;
+}
+.semanas-portada .s2 a { border-left-color: #8ea7f0; }
+.semanas-portada a:hover { background: rgba(255, 255, 255, 0.16); }
+.semana-nombre { font-family: "Poppins", "Lato", sans-serif; font-weight: 700; margin-right: 0.25rem; }
 .ilustracion { width: 100%; height: auto; }
 @media (max-width: 52rem) {
   .portada-rejilla { grid-template-columns: 1fr; }
