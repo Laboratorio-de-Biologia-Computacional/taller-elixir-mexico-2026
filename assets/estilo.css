@@ -224,6 +224,8 @@ th, td { text-align: left; vertical-align: top; padding: 0.5rem 0.75rem 0.5rem 0
 th { color: var(--titulo); }
 td.hora { white-space: nowrap; font-variant-numeric: tabular-nums; width: 8.5rem; }
 tr.pausa td { color: var(--texto); opacity: 0.8; font-style: italic; }
+/* Quién imparte la sesión: debajo de la actividad, en una línea propia */
+.ponente { display: block; margin-top: 0.15rem; font-size: 0.9rem; font-weight: 700; color: var(--titulo); }
 
 .aviso {
   background: var(--fondo-suave);
