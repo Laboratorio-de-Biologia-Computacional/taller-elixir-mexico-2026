@@ -15,12 +15,15 @@ Se publica con GitHub Pages desde la rama `main`, carpeta raíz.
 | `assets/fuentes/` | Tipografías Lato (texto) y Poppins (títulos de la portada, igual que en los banners), servidas desde el propio sitio; licencia SIL OFL 1.1 en `OFL.txt` y `OFL-poppins.txt` |
 | `assets/img/tarjeta-redes.jpg` | Imagen de vista previa (1200 × 630) que aparece al compartir la liga en redes sociales, WhatsApp o correo |
 | `assets/img/icono.svg`, `icono-180.png` | Ícono de la pestaña del navegador y del acceso directo en teléfono |
+| `scripts/recolorear_banners_semana2.py` | Script con el que se pasaron los banners de la Semana 2 de verde azulado a azul índigo (aplicado una vez; ver sus instrucciones antes de volver a correrlo) |
 | `.nojekyll` | Indica a GitHub Pages que publique los archivos tal cual, sin procesarlos |
 
 ## Principios
 
 - Página estática: sin JavaScript, sin cookies, sin servicios de rastreo y sin
   recursos externos (la fuente se sirve desde el propio sitio).
+- Cada semana tiene su tono: la Semana 1 en verde azulado y la Semana 2 en azul índigo
+  (cabeceras, banners, tarjetas y bordes de cada día).
 - Accesible: contraste conforme a WCAG AA, navegación por teclado, modo oscuro y
   diseño para teléfono.
 - Solo información pública del taller. La organización interna vive en el

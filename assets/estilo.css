@@ -42,6 +42,20 @@
   --titulo: #023452;
   --enlace: #023452;
   --ancho: 60rem;
+  /* Tono de cada semana: la Semana 1 conserva el verde azulado de los banners;
+     la Semana 2 usa un azul índigo (el mismo degradado con el tono desplazado 40°) */
+  --s1-g1: #0b2b3d; --s1-g2: #0f4a5c; --s1-g3: #137878; --s1-claro: #bff3ea; --s1-acento: #137878;
+  --s2-g1: #0c0b3d; --s2-g2: #0f175c; --s2-g3: #133578; --s2-claro: #bfd9f3; --s2-acento: #2f4fb0;
+}
+
+/* Cada sección toma el tono de su semana; fuera de ellas se usa el de la Semana 1 */
+:root, #semana-1, a.tarjeta[href="#semana-1"] {
+  --semana-g1: var(--s1-g1); --semana-g2: var(--s1-g2); --semana-g3: var(--s1-g3);
+  --semana-claro: var(--s1-claro); --semana-acento: var(--s1-acento);
+}
+#semana-2, a.tarjeta[href="#semana-2"] {
+  --semana-g1: var(--s2-g1); --semana-g2: var(--s2-g2); --semana-g3: var(--s2-g3);
+  --semana-claro: var(--s2-claro); --semana-acento: var(--s2-acento);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -52,6 +66,8 @@
     --texto: #e8eef2;
     --titulo: #ffffff;
     --enlace: #f7a15c;
+    --s1-acento: #4fc2b1;
+    --s2-acento: #8ea7f0;
   }
 }
 
@@ -151,7 +167,7 @@ p { max-width: 46rem; }
 .tarjeta {
   background: var(--fondo-suave);
   border: 1px solid var(--borde);
-  border-top: 4px solid var(--naranja);
+  border-top: 6px solid var(--semana-acento);
   border-radius: 4px;
   padding: 1rem 1.25rem;
 }
@@ -179,7 +195,7 @@ details.dia > summary img.banner { margin: 0; border-radius: 4px 4px 0 0; }
   background: var(--fondo-suave);
   border: 1px solid var(--borde);
   border-top: 0;
-  border-left: 4px solid #f2b134;
+  border-left: 6px solid var(--semana-acento);
   border-radius: 0 0 4px 4px;
   font-weight: 700;
   color: var(--titulo);
@@ -190,7 +206,7 @@ details.dia > summary:hover .ver-mas { text-decoration: underline; }
 details.dia .cuerpo {
   border: 1px solid var(--borde);
   border-top: 0;
-  border-left: 4px solid #f2b134;
+  border-left: 6px solid var(--semana-acento);
   padding: 1rem 1rem 0.5rem;
   margin-top: -4px;
   border-radius: 0 0 4px 4px;
@@ -206,7 +222,7 @@ details.dia .cuerpo > p:first-child { margin-top: 0; }
     position: static !important; width: auto; height: auto; margin: 0; clip: auto;
     white-space: normal; overflow: visible;
     display: block;
-    background: linear-gradient(100deg, #0b2b3d 0%, #0f4a5c 55%, #137878 100%);
+    background: linear-gradient(100deg, var(--semana-g1) 0%, var(--semana-g2) 55%, var(--semana-g3) 100%);
     border-radius: 4px 4px 0 0;
     padding: 0.9rem 1rem 1rem;
     font-family: "Poppins", "Lato", sans-serif;
@@ -319,7 +335,7 @@ img.banner {
   grid-template-columns: minmax(0, 1fr) 15rem;
   gap: 1.5rem;
   align-items: center;
-  background: linear-gradient(100deg, #0b2b3d 0%, #0f4a5c 55%, #137878 100%);
+  background: linear-gradient(100deg, var(--semana-g1) 0%, var(--semana-g2) 55%, var(--semana-g3) 100%);
   border-radius: 6px;
   border-bottom: 5px solid #f2b134;
   padding: 2rem 2.25rem;
@@ -329,7 +345,7 @@ img.banner {
   font-family: "Poppins", "Lato", sans-serif;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: #bff3ea;
+  color: var(--semana-claro);
   margin: 0 0 0.8rem;
 }
 .cabecera-semana .pastilla { margin-bottom: 0.9rem; }
