@@ -185,6 +185,8 @@ details.dia[open] > summary { border-radius: 4px 4px 0 0; }
   background: #f2b134; color: #13253a;
   padding: 0.15rem 0.5rem; border-radius: 4px; white-space: nowrap;
 }
+/* Avisos del día (salón, cupo, idioma): visibles aunque el día esté plegado */
+.dia-notas { font-size: 0.88rem; font-weight: 400; color: var(--texto); }
 .ver-mas { font-size: 0.9rem; font-weight: 700; color: var(--enlace); white-space: nowrap; }
 .ver-mas::before { content: "▸ "; }
 details.dia[open] .ver-mas::before { content: "▾ "; }
