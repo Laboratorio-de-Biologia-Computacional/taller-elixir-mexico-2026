@@ -269,19 +269,19 @@ img.banner {
 /* Fila de logotipos de la portada: ELIXIR en su versión en negativo; el escudo de la UNAM (negro)
    y el logotipo del CCG (azul) conservan sus colores institucionales sobre una placa blanca,
    porque el fondo de la portada es oscuro */
+/* Todos los logotipos van en una sola fila, a la misma altura: el tamaño se ajusta al ancho de la
+   pantalla (clamp) en lugar de pasar a un segundo renglón */
 .logos-portada {
-  display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem;
+  display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(0.5rem, 1.2vw, 0.85rem);
   list-style: none; margin: 0 0 1.5rem; padding: 0;
 }
 .logos-portada a { display: block; }
-.logo-elixir img { display: block; width: auto; height: 74px; }
-.logo-placa { background: #ffffff; border-radius: 8px; padding: 0.4rem 0.6rem; }
-.logo-placa img { display: block; width: auto; height: 62px; }
-@media (max-width: 480px) {
-  .logos-portada { gap: 0.75rem 1rem; }
-  .logo-elixir img { height: 56px; }
-  .logo-placa img { height: 46px; }
+.logo-elixir img { display: block; width: auto; height: clamp(32px, 4vw, 50px); }
+.logo-placa {
+  background: #ffffff; border-radius: 6px;
+  padding: clamp(0.2rem, 0.5vw, 0.35rem) clamp(0.3rem, 0.7vw, 0.5rem);
 }
+.logo-placa img { display: block; width: auto; height: clamp(26px, 3.4vw, 40px); }
 .logo-pie { display: inline-block; margin: 0 0 1rem; padding: 0.5rem 0; }
 .logo-pie img { display: block; width: 110px; height: auto; }
 
