@@ -14,6 +14,7 @@ Se publica con GitHub Pages desde la rama `main`, carpeta raíz.
 | `assets/img/` | Banners del registro y de los días 4 y 5 de la Semana 2 (WebP) y logotipo de ELIXIR en SVG (versión estándar y negativa), proporcionado por el equipo de ELIXIR |
 | `assets/fuentes/` | Tipografías Lato (texto) y Poppins (títulos de la portada, igual que en los banners), servidas desde el propio sitio; licencia SIL OFL 1.1 en `OFL.txt` y `OFL-poppins.txt` |
 | `assets/img/tarjeta-redes.jpg` | Imagen de vista previa (1200 × 630) que aparece al compartir la liga en redes sociales, WhatsApp o correo |
+| `assets/img/logo-iner.png`, `logo-iner-90.png` | Logotipo del INER y logotipo conmemorativo de su 90 aniversario, proporcionados por Relaciones Públicas y Comunicación del INER con autorización de uso solo para los materiales del taller |
 | `assets/img/icono.svg`, `icono-180.png` | Ícono de la pestaña del navegador y del acceso directo en teléfono |
 | `scripts/recolorear_banners_semana2.py` | Script con el que se pasaron los banners de la Semana 2 de verde azulado a azul índigo (aplicado una vez; ver sus instrucciones antes de volver a correrlo) |
 | `.nojekyll` | Indica a GitHub Pages que publique los archivos tal cual, sin procesarlos |
