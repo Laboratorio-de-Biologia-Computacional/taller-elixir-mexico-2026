@@ -17,6 +17,7 @@ Se publica con GitHub Pages desde la rama `main`, carpeta raíz.
 | `assets/img/logo-iner.png`, `logo-iner-90.png` | Logotipo del INER y logotipo conmemorativo de su 90 aniversario, proporcionados por Relaciones Públicas y Comunicación del INER con autorización de uso solo para los materiales del taller |
 | `assets/img/icono.svg`, `icono-180.png` | Ícono de la pestaña del navegador y del acceso directo en teléfono |
 | `scripts/recolorear_banners_semana2.py` | Script con el que se pasaron los banners de la Semana 2 de verde azulado a azul índigo (aplicado una vez; ver sus instrucciones antes de volver a correrlo) |
+| `scripts/regenerar_banners_dia.py` | Script que vuelve a escribir el título de los banners de día cuyo nombre cambió en el programa, conservando su fondo y su dibujo (aplicado el 4 de noviembre de 2026 a los miércoles 18 y 25, el viernes 20 y el jueves 26) |
 | `.nojekyll` | Indica a GitHub Pages que publique los archivos tal cual, sin procesarlos |
 
 ## Principios

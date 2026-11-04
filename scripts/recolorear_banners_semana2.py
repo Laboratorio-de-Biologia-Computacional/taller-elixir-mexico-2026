@@ -11,6 +11,10 @@ NO los deja igual: los desplaza otra vez. Para regenerarlos, primero se recupera
 los originales con:
     git show 9287ada:assets/img/banner-s2-dia-N.webp > assets/img/banner-s2-dia-N.webp
 
+Los banners banner-s2-dia-3 y banner-s2-dia-4 se regeneraron el 4 de noviembre de 2026
+con scripts/regenerar_banners_dia.py a partir de su versión ya recoloreada; si se
+recuperan los originales, hay que volver a correr también ese script.
+
 Uso (desde la raíz del repositorio):
     python3 scripts/recolorear_banners_semana2.py
 Requiere Pillow y NumPy.
